@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import axios from 'axios';
+import api from '../utils/axios';
 import style from './SessionTimeout.module.css';
 import { useTranslation } from 'react-i18next';
 import { FiClock } from 'react-icons/fi';
@@ -45,9 +45,7 @@ export default function SessionTimeout() {
         if (token && token !== "undefined" && token !== lastTokenRef.current) {
             lastTokenRef.current = token;
 
-            axios.get("http://127.0.0.1:8000/api/dashboard/settings/", {
-                headers: { Authorization: `Token ${token}` }
-            }).then(response => {
+            api.get("/dashboard/settings/").then(response => {
                 const timeoutMinutes = response.data?.sessionTimeout || 30;
                 timeoutMsRef.current = timeoutMinutes * 60 * 1000;
                 resetTimeout();

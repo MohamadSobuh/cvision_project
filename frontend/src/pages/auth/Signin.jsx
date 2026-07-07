@@ -2,11 +2,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+import api from "../../utils/axios";
 import darklogo from "../../images/darklogo.png";
 import Input from "../../components/ui/Input";
 import InputError from "../../components/ui/InputError";
@@ -14,8 +14,6 @@ import Notification from "../../components/ui/Notification";
 import { useUserFlow } from "../../context/UserFlowContext";
 import { loginSchema } from "../../utils/validationSchema";
 import style from "./Sign.module.css";
-
-const API_URL = "http://127.0.0.1:8000/api/users";
 
 export default function Signin() {
     const location = useLocation();
@@ -55,7 +53,7 @@ export default function Signin() {
 
     const handleGoogleCredential = useCallback(async ({ credential }) => {
         try {
-            const response = await axios.post(`${API_URL}/google-login/`, { credential });
+            const response = await api.post("/users/google-login/", { credential });
             completeLogin(response.data);
         } catch (error) {
             showMessage(
@@ -114,7 +112,7 @@ export default function Signin() {
 
     const submitForm = async (data) => {
         try {
-            const response = await axios.post(`${API_URL}/login/`, data);
+            const response = await api.post("/users/login/", data);
             completeLogin(response.data);
         } catch (error) {
             if (error.response?.data?.non_field_errors) {

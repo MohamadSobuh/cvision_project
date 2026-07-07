@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import style from "./Sign.module.css";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/ui/Input";
 import InputError from "../../components/ui/InputError";
@@ -15,6 +14,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import profileImg from "../../images/profileImg.PNG";
 import { notify } from "../../utils/toast";
+import api from "../../utils/axios";
 
 export default function Signup() {
     const location = useLocation();
@@ -70,7 +70,7 @@ export default function Signup() {
         }
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/users/register/", payload);
+            const response = await api.post("/users/register/", payload);
             console.log("Success:", response.data);
             navigate("/login", {
                 state: {
