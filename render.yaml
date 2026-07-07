@@ -20,9 +20,9 @@ services:
       - key: POSTGRES_CONN_MAX_AGE
         value: 60
       - key: CORS_ALLOWED_ORIGINS
-        value: https://cvision.onrender.com
+        value: https://cvision.onrender.com,https://cvision-t4yu.onrender.com
       - key: CSRF_TRUSTED_ORIGINS
-        value: https://cvision.onrender.com
+        value: https://cvision.onrender.com,https://cvision-t4yu.onrender.com
       - key: GOOGLE_OAUTH_CLIENT_ID
         value: 996039616861-t7vukaageedsklntm64k31o1aeu360vm.apps.googleusercontent.com
       - key: CV_ANALYZER_LOAD_BERT_NER
