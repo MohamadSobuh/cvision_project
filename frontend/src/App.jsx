@@ -44,7 +44,7 @@ const ViewTaskContent = lazy(() => import('./pages/admin/ViewTaskContent'));
 const Report = lazy(() => import('./pages/user/Report'));
 const EditAdminProfile = lazy(() => import('./pages/admin/EditAdminProfile'));
 const AdminProfile = lazy(() => import('./pages/admin/AdminProfile'));
-const LoadingPage = lazy(() => import('./pages/user/loadingPage'));
+const LoadingPage = lazy(() => import('./pages/user/LoadingPage'));
 const TopicsPage = lazy(() => import('./pages/admin/TopicsPage'));
 const InitalAssQuiz = lazy(() => import('./pages/user/InitalAssQuiz'));
 const TaskAnswerResult = lazy(() => import("./pages/user/TaskAnswerResult"));

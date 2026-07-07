@@ -1,7 +1,7 @@
 import style from "./SidebarAdminUser.module.css";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FaThLarge, FaUsers, FaBookOpen, FaListUl, FaQuestionCircle, FaCog, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
-import lightlogo from "../images/lightlogo.png";
+import lightlogo from "../images/lightLogo.png";
 import { useTranslation } from "react-i18next";
 
 import { useState, useEffect } from 'react';
