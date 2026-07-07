@@ -1,0 +1,180 @@
+.dash {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding-left: 260px; 
+    padding: 20px 40px 20px 300px;
+}
+
+.dashArabic {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 300px 20px 40px;
+}
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+.cardsContainer {
+    display: flex;
+    gap: 60px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 5px #082F43;
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin: 0 15px 0 15px;
+    flex: 1;
+}
+.iconStats {
+    font-size: 50px;
+    padding: 0 10px;
+}
+
+.lastUsers {
+    background-color: white;
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+    border-radius: 25px;
+    width: 94%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.tableLastUsers {
+    width: 100%;
+    color: #1A83A8;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.tableLastUsers th {
+    border-bottom: 1px solid #1A83A8;
+}
+
+.tableLastUsers th,
+.tableLastUsers td {
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.lastUsers h3 {
+    color: #1A83A8;
+    padding: 10px 0;
+}
+
+.planName {
+    background-color: #E6F7F9;
+    color: #1A83A8;
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+
+@media (max-width: 1024px) {
+    .dash,
+    .dashArabic {
+        padding: 30px;
+    }
+
+    .card {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .lastUsers {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .tableLastUsers th,
+    .tableLastUsers td {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dash,
+    .dashArabic {
+        padding: 30px;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 20px;
+    }
+
+    .iconStats {
+        font-size: 40px;
+    }
+
+    .lastUsers {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .tableLastUsers th,
+    .tableLastUsers td {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dash,
+    .dashArabic {
+        padding: 30px;
+    }
+
+    .iconStats {
+        font-size: 50px;
+    }
+
+    .links {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .adimnImg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .dash h1 {
+        font-size: 22px;
+    }
+
+    .dash p {
+        font-size: 14px;
+    }
+
+    .lastUsers {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .lastUsers h3 {
+        font-size: 20px;
+    }
+
+    .tableLastUsers th,
+    .tableLastUsers td {
+        padding: 5px;
+        font-size: 10px;
+    }
+}

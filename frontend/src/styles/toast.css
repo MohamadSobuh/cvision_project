@@ -1,0 +1,45 @@
+.Toastify__toast-container {
+    width: min(420px, calc(100vw - 32px));
+}
+
+.Toastify__toast {
+    border-radius: 14px;
+    box-shadow: 0 12px 32px rgba(8, 47, 67, 0.2);
+    color: #082f43;
+    font-family: "Sora", sans-serif;
+}
+
+.Toastify__progress-bar {
+    background: #1a83a8;
+}
+
+.toast-confirm__message {
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 14px;
+}
+
+.toast-confirm__actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.toast-confirm__button {
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 7px 13px;
+}
+
+.toast-confirm__button--cancel {
+    background: white;
+    border: 1px solid #1a83a8;
+    color: #1a83a8;
+}
+
+.toast-confirm__button--error {
+    background: #b73549;
+    border: 1px solid #b73549;
+    color: white;
+}

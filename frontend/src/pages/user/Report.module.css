@@ -1,0 +1,411 @@
+.report {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 40px 20px 300px;
+    min-height: 100vh;
+}
+
+.reportAr {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 300px 20px 40px;
+    min-height: 100vh;
+}
+
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+.support {
+    background-color: #bedde8;
+    color: #1A83A8;
+    border-radius: 25px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.help {
+    color: #547485;
+}
+
+
+.reportDetails {
+    padding: 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 60%;
+    background-color: #f7fbfc;
+    border-left: 5px solid #1A83A8;
+    box-shadow: 0 4px 12px rgba(8, 47, 67, 0.08);
+}
+
+.reportTitle {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 20px 0px;
+}
+
+.reportTextarea {
+    margin: 20px 0;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.priorityLevelLow {
+    background-color: white;
+    padding: 10px;
+    margin: 20px 10px 50px 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+
+}
+
+.priorityLevelLow:hover {
+    background-color: #e6ffea;
+}
+
+.priorityLevelLow.active {
+    background-color: #c8f7d1;
+}
+
+.priorityLevelMed {
+    background-color: white;
+    padding: 10px;
+    margin: 20px 10px 50px 10px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+
+}
+
+.priorityLevelMed:hover {
+    background-color: #ffe5cc;
+}
+
+.priorityLevelMed.active {
+    background-color: #f4e4d3;
+}
+
+.priorityLevelHigh {
+    background-color: white;
+    padding: 10px;
+    margin: 20px 10px 50px 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.priorityLevelHigh:hover {
+    background-color: #ffe5e5;
+}
+
+.priorityLevelHigh.active {
+    background-color: #ffcccc;
+}
+
+.lowCircle {
+    background-color: green;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+}
+
+.medCircle {
+    background-color: orange;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+}
+
+.highCircle {
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+}
+
+.dropZone {
+    border: 2px dashed #aaa;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    margin: 20px 0px;
+    overflow: hidden;
+}
+
+.dropZone:hover {
+    background-color: #f8f8f8;
+}
+
+.activeDrop {
+    border-color: #4caf50;
+    background-color: #eaffea;
+}
+
+.hiddenInput {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.uploadIcon {
+    font-size: 40px;
+    color: #1A83A8;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.dropZone:hover .uploadIcon {
+    color: #082F43;
+}
+
+.submit {
+    background-color: #082F43;
+    color: white;
+    border-radius: 15px;
+    border: 1px solid #082F43;
+    padding: 10px;
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 200px;
+    text-align: center;
+}
+
+.errorBox {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #ffe5e5;
+    border: 1px solid #ff4d4d;
+    color: #b30000;
+    border-radius: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.contentRow {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+
+.tipsBox {
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.urgentBox {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff5f5;
+    border-left: 4px solid #ff4d4d;
+    border-radius: 10px;
+}
+
+.urgentBox h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 10px 0;
+    color: #ff4d4d;
+}
+
+.urgentBox p {
+    margin: 0;
+    font-size: 14px;
+    color: #5a5a5a;
+    line-height: 1.6;
+}
+
+.reportAr .reportDetails {
+    border-left: none;
+    border-right: 5px solid #1A83A8;
+}
+
+.reportAr .urgentBox {
+    border-left: none;
+    border-right: 4px solid #ff4d4d;
+}
+.boltIcon {
+    color: #ff4d4d;
+}
+
+.successIcon {
+    flex: 0 0 auto;
+    font-size: 24px;
+    color: green;
+}
+
+.previewContent {
+    position: relative;
+}
+
+.screenshotPreview {
+    display: block;
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #eef5f7;
+}
+
+.fileDetails {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.fileDetails div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.fileDetails span {
+    max-width: 100%;
+    color: #547485;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.removeImage {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    background: rgba(8, 47, 67, 0.82);
+    cursor: pointer;
+}
+
+.removeImage:hover {
+    background: #b30000;
+}
+
+.reportAr .removeImage {
+    right: auto;
+    left: 10px;
+}
+
+.sideColumn {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+
+    .report,
+    .reportAr {
+        padding: 20px;
+    }
+
+    .contentRow {
+        flex-direction: column;
+    }
+
+    .reportDetails {
+        width: 100%;
+    }
+
+    .sideColumn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contentRow {
+        flex-direction: column;
+    }
+
+    .reportDetails,
+    .tipsBox {
+        width: 100%;
+    }
+
+    .priorityLevelLow,
+    .priorityLevelMed,
+    .priorityLevelHigh {
+        flex: 1;
+        white-space: nowrap;
+    }
+
+    .submit {
+        width: 100%;
+    }
+
+    .reportTextarea {
+        width: 100%;
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+    .support {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .help {
+        font-size: 14px;
+    }
+}

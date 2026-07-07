@@ -1,0 +1,52 @@
+.header {
+    padding: 15px 40px;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #CDF6F9;
+    color: #07526B;
+    background-color: #E6F7F9;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.selectLang {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #07526B;
+    background-color: #07526B;
+    cursor: pointer;
+    color: white;
+}
+
+option {
+    background-color: #CDF6F9;
+    color: #07526B;
+}
+
+
+.imgProfile {
+    width: 40px;
+    height: 40px;
+}
+
+
+@media (max-width: 768px) {
+
+    .headerContent h6 {
+        display: none;
+    }
+
+
+    .selectLang {
+        padding: 2px;
+        border-radius: 5px;
+    }
+
+}

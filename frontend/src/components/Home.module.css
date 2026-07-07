@@ -1,0 +1,541 @@
+.bg {
+    font-family: 'Sora', sans-serif;
+    color: #082F43;
+    background: white;
+
+}
+
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #E6F7F9;
+    color: #1A83A8;
+    margin: 0 50px 0 50px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #1A83A8;
+
+}
+
+.logo {
+    width: 48px;
+    height: 58px;
+}
+
+.navLinks {
+    display: flex;
+    gap: 40px;
+    border-radius: 25px;
+    border: 1px solid #1A83A8;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 0 10px #1A83A8;
+
+}
+
+.navLinks a {
+    color: #1A83A8;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.navLinks a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #082F43, #1A83A8, #a0d8dd);
+    transition: 0.3s;
+}
+
+.navLinks a:hover::after {
+    width: 100%;
+}
+
+.headright {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.selectLang {
+    appearance: none;
+    padding: 6px 28px 6px 12px;
+    border-radius: 12px;
+    border: 1px solid #082F43;
+    background: white;
+    color: #082F43;
+    cursor: pointer;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.selectLang:hover {
+    border-color: #1A83A8;
+    box-shadow: 0 0 10px rgba(59, 158, 255, 0.2);
+}
+
+.btnPrimary {
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 14px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #082F43;
+    color: white;
+    box-shadow: 0 0 20px rgba(59, 158, 255, 0.3);
+    transition: 0.25s;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 35px rgba(59, 158, 255, 0.5);
+}
+
+.menuIcon {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Mobile menu */
+.mobileMenu {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+    background: #082F43;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 200px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.mobileMenu a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.mobileMenu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    gap: 40px;
+
+}
+
+.hero h1 {
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+.getStarted {
+    background-color: white;
+    color: #1A83A8;
+    padding: 5px 10px;
+    border: 1px solid #1A83A8;
+    border-radius: 25px;
+    margin: 80px 0px 100px 0px;
+    transition: transform 0.3s, background-color 0.3s;
+
+}
+
+.getStarted:hover {
+    transform: scale(1.1);
+    background-color: #1A83A8;
+    color: white;
+}
+
+.imgBox {
+    position: relative;
+    width: 600px;
+    height: 500px;
+    mask-image: radial-gradient(circle at center,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 30%,
+            rgba(0, 0, 0, 0.8) 50%,
+            rgba(0, 0, 0, 0) 90%);
+    -webkit-mask-image: radial-gradient(circle at center,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 30%,
+            rgba(0, 0, 0, 0.8) 50%,
+            rgba(0, 0, 0, 0) 90%);
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.section {
+    text-align: center;
+    padding: 120px 60px;
+    background-color: #E6F7F9;
+
+}
+
+.section h1 {
+    margin-bottom: 80px;
+}
+
+.r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #082F43;
+    color: white;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 20px;
+    padding: 20px;
+}
+
+.icon {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconInside {
+    color: #082F43;
+    font-size: 30px;
+}
+
+.workcard {
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.section2 {
+    text-align: center;
+    padding: 120px 60px;
+
+}
+
+.howWorks {
+    color: #082F43;
+    margin-bottom: 200px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+}
+
+.iconhowWorks {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconInsideHowWorks {
+    font-size: 100px;
+}
+
+.steptitle {
+    display: flex;
+    gap: 10px;
+}
+
+.step {
+    display: flex;
+    gap: 130px;
+    padding: 50px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.stepText,
+.workcard {
+    flex: 0 1 420px;
+    min-width: 0;
+}
+
+.workcard {
+    min-height: 280px;
+}
+
+.allsteps {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+
+
+
+.footer {
+    color: #082F43;
+    margin: 0 150px;
+    padding: 40px 0;
+    border-top: 1px solid #082F43;
+    position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 320px;
+}
+
+.footerGrid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.footerColumn {
+    min-width: 0;
+}
+
+.footer ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #082F43;
+}
+
+.footer a:hover {
+    color: #1A83A8;
+}
+
+.socialIcons a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.socialIcons a:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+@media (max-width: 789px) {
+    .bg {
+        overflow-x: hidden;
+    }
+
+    .head {
+        padding: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .getStarted {
+        margin: 20px auto 40px auto;
+        display: block;
+    }
+
+    .imgBox {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+
+    .section h1 {
+        margin-bottom: 40px;
+    }
+
+    .r {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+
+        width: 90% !important;
+        max-width: none !important;
+        margin: 15px auto !important;
+
+    }
+
+    .section2 {
+        padding: 60px 20px;
+        margin-bottom: 20px;
+    }
+
+    .howWorks {
+        margin-bottom: 80px;
+    }
+
+    .allsteps {
+
+        width: 90% !important;
+        max-width: none !important;
+        margin: 15px auto !important;
+
+    }
+
+    .step {
+        gap: 40px;
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .step:nth-child(even) {
+        flex-direction: column !important;
+    }
+
+    .step:nth-child(odd) {
+        flex-direction: column-reverse !important;
+    }
+
+    .steptitle {
+        justify-content: center;
+    }
+
+    .step ul {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .iconhowWorks {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+
+    .iconInsideHowWorks {
+        font-size: 60px;
+    }
+
+    .workcard {
+        padding: 30px;
+    }
+
+ 
+    .footer {
+        margin: 0 20px;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .footerColumn {
+        margin-bottom: 30px;
+    }
+
+    .footerGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .socialIcons {
+        justify-content: center;
+        display: flex;
+    }
+}
+
+@media (max-width: 910px) {
+
+
+    .bg {
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 789px) {
+    .r {
+        flex-direction: column !important;
+    }
+
+    .card {
+        width: 90% !important;
+        max-width: none !important;
+        margin: 15px auto !important;
+    }
+
+    .workcard {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 20px 0 !important;
+        padding: 40px !important;
+    }
+
+    .stepText,
+    .workcard {
+        width: 100% !important;
+        text-align: center;
+    }
+
+
+}
+
+
+@media (max-width: 900px) {
+
+    .navLinks {
+        display: none;
+    }
+
+    .btnPrimary {
+        display: none;
+    }
+
+    .menuIcon {
+        display: block;
+        color: white;
+    }
+
+    .head {
+        padding: 10px 20px;
+    }
+}

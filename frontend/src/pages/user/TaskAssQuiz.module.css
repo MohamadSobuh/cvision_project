@@ -1,0 +1,644 @@
+.taskAssQuiz {
+    background-color: #E6F7F9;
+    color: #082F43;
+    min-height: 100vh;
+    padding: 32px 40px;
+}
+
+.taskAssQuizAr {
+    background-color: #E6F7F9;
+    color: #082F43;
+    min-height: 100vh;
+    padding: 32px 40px;
+}
+
+.quizShell {
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.quizState {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 64px);
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.quizState h2 {
+    color: #082f43;
+    margin: 0;
+}
+
+.quizState p {
+    color: #6997a4;
+    margin: 10px 0 22px;
+}
+
+.quizStateSpinner {
+    animation: quizStateSpin 0.9s linear infinite;
+    color: #157253;
+    font-size: 3.25rem;
+    margin-bottom: 20px;
+}
+
+.quizStateErrorIcon {
+    color: #b73549;
+    font-size: 3.25rem;
+    margin-bottom: 20px;
+}
+
+.quizStateActions {
+    display: flex;
+    gap: 12px;
+}
+
+.quizRetryButton,
+.quizExitStateButton {
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px 22px;
+}
+
+.quizRetryButton {
+    background: #157253;
+    border: 1px solid #157253;
+    color: white;
+}
+
+.quizExitStateButton {
+    background: white;
+    border: 1px solid #b73549;
+    color: #b73549;
+}
+
+@keyframes quizStateSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.quizHeader {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.quizHeader h1 {
+    margin: 0;
+}
+
+.exitButton {
+    align-items: center;
+    background: white;
+    border: 1px solid #c94c5d;
+    border-radius: 10px;
+    color: #b73549;
+    display: inline-flex;
+    font-weight: 600;
+    gap: 8px;
+    padding: 9px 15px;
+}
+
+.exitButton:hover {
+    background: #b73549;
+    color: white;
+}
+
+.quizContent {
+    align-items: start;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+.taskAssQuiz h1,
+.taskAssQuizAr h1 {
+    margin-bottom: 30px;
+}
+
+.qA {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    min-width: 0;
+    box-shadow: 0px 0px 5px #157253;
+
+}
+
+.qA h5 {
+    margin: 20px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #1A83A8;
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 90%;
+    color: #1A83A8;
+
+}
+
+.option:hover {
+    color: #ff637a;
+}
+
+.option input {
+    display: none;
+}
+
+.newRadio {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #157253;
+    border-radius: 50%;
+    position: relative;
+}
+.activeAndAnswered {
+    border-color: #157253;
+    background: #ccf3e3;
+}
+
+
+.option input:checked+.newRadio::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.option:has(input:checked) {
+    border-color: #157253;
+    background: #ccf3e3;
+    color: #157253;
+
+}
+
+.option:hover {
+    background-color: #ccf3e3;
+    border: 1px solid #157253;
+    color: #157253;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+
+.prev {
+    border: none;
+    background-color: white;
+    color: #ccf3e3;
+    transition: 0.3s;
+    margin-left: 20px;
+}
+
+.prev:hover {
+    font-size: 18px;
+
+}
+
+.next {
+    border: none;
+    color: #157253;
+    background-color: white;
+    transition: 0.3s;
+    margin-right: 50px;
+    transition: 0.3s;
+}
+
+.next:hover {
+    font-size: 18px;
+}
+
+.qCard {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 5px #157253;
+    color: #157253;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 10px;
+}
+
+.item p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.current {
+    background-color: #ccf3e3;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid #157253;
+}
+
+.notAnswered {
+    border: 1px solid #157253;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.answered {
+    background-color: #157253;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    background-color: #ccf3e3;
+    color: #157253;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.submit:hover {
+    background-color: #157253;
+    color: white;
+    transition: 0.3s;
+}
+
+.qItem {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #157253;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+    color: #157253;
+}
+
+.qItem:hover {
+    border-color: #157253;
+    background: #ccf3e3;
+}
+
+.active {
+    background-color: #ccf3e3;
+    color: #157253;
+    border-color: #157253;
+}
+
+.answeredQ {
+    background-color: #157253;
+    color: white;
+    border-color: #157253;
+}
+
+.progressContainer {
+    width: 90%;
+    height: 15px;
+    background-color: #ccf3e3;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: #157253;
+    width: 0%;
+    transition: 0.4s ease;
+}
+
+.progressText {
+    font-size: 12px;
+    color: #157253;
+    margin: 10px 0 3px 5px;
+}
+
+.quizResultEn {
+    background-color: #E6F7F9;
+    color: #082F43;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+
+}
+
+.quizResultAr {
+    background-color: #E6F7F9;
+    color: #082F43;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    direction: rtl;
+    text-align: right;
+}
+
+
+.card {
+    max-width: 560px;
+    background: linear-gradient(135deg, #082F43, #1A83A8);
+    border-radius: 20px;
+    padding: 40px 30px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.emoji {
+    font-size: 32px;
+}
+
+.title {
+    font-size: 22px;
+    margin: 10px;
+}
+
+.description {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-direction: row;
+    width: 100%;
+}
+
+.planBtn {
+    padding: 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #082F43, #1A83A8);
+    transition: 0.3s;
+    border: none;
+    color: white;
+}
+
+.planBtn:hover {
+    background: linear-gradient(135deg, #1A83A8, #082F43);
+}
+
+.dashBtn {
+    padding: 14px;
+    border-radius: 14px;
+    background: white;
+    border: 1.5px solid #082F43;
+    color: #082F43;
+}
+
+.dashBtn:hover {
+    background-color: #CDF6F9;
+}
+
+.quizResultEn .card :global(.inner) {
+    color: #082F43;
+}
+
+@media (max-width: 576px) {
+
+    .taskAssQuiz {
+        padding: 15px;
+    }
+
+    .qA {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .option {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prev,
+    .next {
+        margin: 0;
+    }
+
+    .qCard {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .progressContainer {
+        width: 100%;
+    }
+
+    .quizResultEn {
+        height: auto;
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 25px 15px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .planBtn,
+    .dashBtn {
+        width: 100%;
+    }
+
+    .circle {
+        margin: 20px auto;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 991px) {
+
+    .taskAssQuiz {
+        padding: 20px;
+    }
+
+    .qA {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .qCard {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .option {
+        width: 100%;
+    }
+
+    .quizResultEn {
+        height: auto;
+        padding: 30px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .circle {
+        margin: 30px auto;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+    .taskAssQuiz {
+        padding: 32px 40px;
+    }
+
+    .taskAssQuizAr {
+        padding: 32px 40px;
+    }
+
+    .qA {
+        width: 100%;
+    }
+
+    .qCard {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .quizResultEn {
+        height: auto;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+    .taskAssQuiz,
+    .taskAssQuizAr {
+        padding: 20px !important;
+    }
+
+    .quizContent {
+        grid-template-columns: 1fr;
+    }
+
+    .option {
+        width: 100%;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+
+    .qA {
+        padding: 15px;
+        overflow: hidden;
+    }
+
+    .qA,
+    .qCard {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .taskAssQuiz {
+        padding: 20px;
+    }
+
+    .qA {
+        margin-bottom: 20px;
+    }
+
+    .quizHeader {
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .quizHeader h1 {
+        font-size: 1.55rem;
+    }
+
+    .exitButton {
+        flex-shrink: 0;
+    }
+
+}

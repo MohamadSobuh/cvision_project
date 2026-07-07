@@ -1,0 +1,68 @@
+.emptyPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color: #1A83A8;
+    text-align: center;
+}
+
+.emptyPage div {
+    font-size: 100px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.emptyPage button {
+    background-color: #F1416F;
+    color: #fce1e6;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    transition: 0.9s;
+}
+
+.emptyPage button:hover {
+    background-color: #fce1e6;
+    color: #F1416F;
+    transform: scale(1.2);
+}
+
+.emptyPage p {
+  white-space: pre-line;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .emptyPage div {
+        font-size: 150px;
+    }
+
+    .emptyPage h3 { 
+        font-size: 40px;
+    }
+
+    .emptyPage p {
+        font-size: 25px;
+    }
+
+    .emptyPage button {
+        padding: 8px 20px;
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,369 @@
+.planContainerEn {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 40px 20px 300px;
+    min-height: 100vh;
+}
+
+.planContainerAr {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 300px 20px 40px;
+    min-height: 100vh;
+}
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+
+.planHead {
+    background-color: #bedde8;
+    color: #1A83A8;
+    border-radius: 25px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.planTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #082F43;
+    margin-bottom: 20px;
+
+}
+
+.planSubtitle {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+.cvSourceLabel {
+    color: #1A83A8;
+    background-color: white;
+    border-inline-start: 4px solid #1A83A8;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: fit-content;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    margin-bottom: 14px;
+}
+
+.overallProgressContainer {
+    margin-bottom: 30px;
+}
+
+.progressLabelRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1A83A8;
+}
+
+.progressLabelRow span:last-child {
+    color: #082F43;
+}
+
+.progressBarContainer {
+    height: 8px;
+    background-color: #d1e8ee;
+    border-radius: 4px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progressBarFill {
+    height: 100%;
+    background-color: #1A83A8;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerRight {
+    min-width: 300px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px 20px 0 20px;
+    border-radius: 10px;
+    border-left:7px solid #1A83A8;
+    
+}
+
+.progressPercent {
+    text-align: right;
+    margin-top: 5px;
+    color: #1A83A8;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+.mainContent {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.topicListColumn {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.topicCard {
+    background-color: #ffffff;
+    border: 1px solid #c9e1e7;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.topicCard.active {
+    background-color: #082F43;
+    border-color: #082F43;
+    color: #ffffff;
+}
+
+.topicCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.topicTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.topicCard:not(.active) .topicTitleRow {
+    color: #082F43;
+}
+
+.difficultyBadge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.easy {
+    background-color: #e6f6ec;
+    color: #3ab071;
+}
+
+.topicCard.active .easy {
+    background-color: #c0f4d6;
+    color: #0f8545;
+}
+
+.medium {
+    background-color: #fff4d9;
+    color: #d69800;
+}
+
+.hard {
+    background-color: #ffeaea;
+    color: #d63232;
+}
+
+.topicDesc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    color: #637983;
+}
+
+.topicCard.active .topicDesc {
+    color: #aebbc1;
+}
+
+.topicProgressRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.topicProgressBarContainer {
+    height: 6px;
+    background-color: #e3ecef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.topicCard.active .topicProgressBarContainer {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.topicProgressBarFill {
+    height: 100%;
+    background-color: #1A83A8;
+}
+
+.topicCard.active .topicProgressBarFill {
+    background-color: #ffffff;
+}
+
+.taskListColumn {
+    width: 65%;
+    background-color: #ffffff;
+    border: 1px solid #1A83A8;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.taskListHeader {
+    margin-bottom: 25px;
+}
+
+.taskListTitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #1A83A8;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.taskListDesc {
+    color: #1A83A8;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Tasks */
+.tasksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.taskItemCompleted {
+    background-color: #f1fdf5;
+    border: 1px solid #dcf4e5;
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.taskItemPending {
+    background-color: #ffffff;
+    border: 1px solid #1A83A8;
+    border-radius: 8px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.completedTaskInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.completedTaskTitle {
+    color: #2db366;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.completedSubtext {
+    color: #2db366;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pendingTaskLeft {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pendingNumberBadge {
+    background-color: #1A83A8;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.pendingTaskTitle {
+    color: #1A83A8;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.startBtn {
+    background-color: #1A83A8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.startBtn:hover {
+    background-color: #082F43;
+}
+
+@media (max-width: 1024px) {
+    .planContainerEn {
+        padding: 20px 20px; 
+    }
+
+    .planContainerAr {
+        padding: 20px 20px; 
+    }
+}
+
+@media (max-width: 680px) {
+    .mainContent {
+        flex-direction: column; 
+    }
+
+    .topicListColumn,
+    .taskListColumn {
+        width: 100%;
+    }
+}

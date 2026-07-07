@@ -1,0 +1,134 @@
+.settingsPage {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 40px 20px 300px;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    direction: ltr;
+}
+
+.settingsPageAr {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 300px 20px 40px;
+
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    direction: rtl;
+}
+
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+@media (max-width: 1024px) {
+
+    .settingsPage,
+    .settingsPageAr {
+        padding: 80px 20px 20px 20px;
+    }
+
+    .settingsCard {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .settingsPage,
+    .settingsPageAr {
+        padding: 70px 15px 15px 15px;
+    }
+
+    .dash h1 {
+        font-size: 24px;
+    }
+
+    .settingsCard {
+        padding: 15px;
+    }
+
+    .cardHeader {
+        gap: 10px;
+    }
+
+    .iconBox {
+        padding: 8px;
+    }
+
+
+}
+
+.settingsCard {
+    background-color: white;
+    border-radius: 20px;
+    padding: 25px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0f2f1;
+}
+
+.iconBox {
+    background-color: #e0f2f1;
+    color: #07526B;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputField {
+    background-color: #F0F9FA;
+    border: 1px solid #CFE9EC;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #082F43;
+    font-size: 0.9rem;
+}
+
+.label {
+    font-weight: 700;
+    color: #07526B;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+
+.btnAdd {
+    background-color: #6997A4;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnAdd:hover {
+    background-color: #1A83A8 !important;
+    color: white !important;
+    cursor: pointer;
+}

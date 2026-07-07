@@ -1,0 +1,256 @@
+:global(.form-control:focus) {
+    border-color: #082F43 !important;
+    box-shadow: 0 0 0 1px #1A83A8 !important;
+    
+}
+
+
+.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl :global(.form-floating > label) {
+    right: 0;
+    left: auto;
+    text-align: right;
+}
+
+.rtl :global(.form-control) {
+    text-align: right;
+}
+
+.glowTopRight {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 300px;
+    height: 100px;
+    background: radial-gradient(circle, #1A83A8 0%, transparent 70%);
+    filter: blur(80px);
+    animation: glowMove 6s ease-in-out infinite alternate;
+}
+
+.glowBottomLeft {
+    position: absolute;
+    bottom: 100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #1A83A8 0%, transparent 70%);
+    filter: blur(80px);
+    animation: glowMove 6s ease-in-out infinite alternate-reverse;
+}
+.logo {
+    width: 80px;
+    height: 95px;
+    margin-bottom:30px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    width: 85px;
+    height: 100px;
+}
+
+.btn {
+    background-color: #1A83A8;
+    border: 1px solid #1A83A8;
+    border-radius: 15px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    margin: 20px auto 0 auto;
+    display: block;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #082F43, #1A83A8, #a0d8dd);
+}
+
+.divider {
+    align-items: center;
+    color: #6c757d;
+    display: flex;
+    font-size: 0.85rem;
+    gap: 12px;
+    margin: 18px 0;
+    width: 100%;
+}
+
+.divider::before,
+.divider::after {
+    background: #d7e3e8;
+    content: "";
+    flex: 1;
+    height: 1px;
+}
+
+.googleButton {
+    display: flex;
+    justify-content: center;
+    min-height: 44px;
+    width: 100%;
+}
+
+.googleNotConfigured {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-image: linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+.bg {
+    min-height: 100vh;
+    padding: 24px 0;
+    display: flex;
+    color: #082F43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Sora', sans-serif;
+    background-color: #e3eff4;
+
+
+}
+
+.left {
+    width: min(520px, calc(100% - 32px));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    border: 1px solid #1A83A8;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 0 15px #1A83A8;
+
+    padding: 20px;
+}
+
+.left form {
+    width: 100%;
+}
+
+.s {
+    text-decoration: none;
+    color: #1A83A8;
+
+}
+
+.passwordInput {
+    padding-right: 45px !important;
+}
+
+.floatingContainer {
+    position: relative;
+}
+
+.eyeIcon {
+    position: absolute;
+    top: 29px; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    z-index: 5; 
+    display: flex;
+    align-items: center;
+}
+
+.ltr .eyeIcon {
+    right: 15px;
+    left: auto;
+}
+
+.rtl .eyeIcon {
+    left: 15px;
+    right: auto;
+}
+
+.ltr .passwordInput {
+    padding-right: 45px !important;
+}
+
+.rtl .passwordInput {
+    padding-left: 45px !important;
+}
+
+.errorWrapper {
+    margin-top: 5px;
+    width: 100%;
+}
+@media (max-width: 1024px) {
+
+    .left {
+        width: 100%;
+    }
+
+    .left form {
+        width: 80%;
+    }
+}
+
+.signupProfile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    background: #f0f9fb;  
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.signupAvatar {
+    border: 2px solid #1a83a8;
+    border-radius: 50%;
+    height: 76px;
+    object-fit: cover;
+    width: 76px;
+}
+
+.imagePicker {
+    background: #e6f7f9;
+    border: 1px solid #1a83a8;
+    border-radius: 10px;
+    color: #1a83a8;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.imagePicker input {
+    display: none;
+}
+
+.bioField {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.bioField textarea {
+    border: 1px solid #1a83a8;
+    border-radius: 15px;
+    min-height: 90px;
+    padding: 12px;
+    resize: vertical;
+}

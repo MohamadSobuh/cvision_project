@@ -1,0 +1,166 @@
+.historyEn {
+  background-color: #E6F7F9;
+  color: #082F43;
+  padding: 20px 40px 20px 300px;
+}
+
+.historyAr {
+  background-color: #E6F7F9;
+  color: #082F43;
+  padding: 20px 300px 20px 40px;
+}
+
+.journey {
+  background-color: #bedde8;
+  color: #1A83A8;
+  border-radius: 25px;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+.historyHead {
+  margin-bottom: 50px;
+}
+
+.historyCard {
+  background-color: white;
+  padding: 15px 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  width: 48%;
+  border-inline-start: 6px solid #1A83A8;
+
+}
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+.historyCard:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardIcon {
+  width: 50px;
+  height: 50px;
+  background-color: #1A83A8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.iconForCard {
+  font-size: 25px;
+  color: #E6F7F9;
+}
+
+.feildTitle {
+  color: #1A83A8;
+  margin: 0;
+  font-size: 18px;
+}
+
+.cvFileName {
+  color: #707070;
+  font-size: 14px;
+  margin: 0;
+}
+
+.viewFullAn {
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: #1A83A8;
+  color: white;
+  font-size: 14px;
+}
+
+.viewFullAn:hover {
+  background-color: #14607a;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.usePlanBtn {
+  border: 1px solid #1A83A8;
+  border-radius: 20px;
+  padding: 8px 16px;
+  background-color: white;
+  color: #1A83A8;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.usePlanBtn:hover:not(:disabled) {
+  background-color: #E6F7F9;
+}
+
+.usePlanBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+@media (max-width: 767px) {
+
+  .historyEn,
+  .historyAr {
+    padding: 20px;
+  }
+
+  .historyCard {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 1225px) {
+
+  .historyCard {
+    width: 100%;
+  }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .historyEn,
+  .historyAr {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,53 @@
+.state {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 40px);
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.state h3 {
+    color: #082f43;
+    margin: 0;
+}
+
+.state p {
+    color: #6997a4;
+    margin: 8px 0 20px;
+}
+
+.spinner {
+    animation: spin 0.9s linear infinite;
+    color: #1a83a8;
+    font-size: 3rem;
+    margin-bottom: 18px;
+}
+
+.errorIcon {
+    color: #c43d4d;
+    font-size: 3rem;
+    margin-bottom: 18px;
+}
+
+.retryButton {
+    background-color: #1a83a8;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px 25px;
+}
+
+.retryButton:hover {
+    background-color: #07526b;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

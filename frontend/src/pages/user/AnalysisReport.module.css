@@ -1,0 +1,382 @@
+.headReport,
+.strengths,
+.weaknesses,
+.startAssessQuiz {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reportEn {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 40px 20px 300px;
+}
+
+.reportAr {
+    background-color: #E6F7F9;
+    color: #082F43;
+    padding: 20px 300px 20px 40px;
+}
+
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+
+.strengths {
+    background-color: white;
+    color: #017008;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 25px 0px 25px 0px;
+    animation-delay: 0.8s;
+
+}
+
+.strengths li::marker {
+    color: #94C4A6;
+}
+
+.weaknesses {
+    background-color: white;
+    color: #ED602E;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 25px 0px 25px 0px;
+    animation-delay: 1s;
+
+}
+
+.weaknesses li::marker {
+    color: #F4A78C;
+}
+
+.weakStyle {
+    background-color: #f8e6df;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid #ED602E;
+}
+
+.strengthStyle {
+    background-color: #e2fded;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid #017008;
+
+}
+
+.score {
+    background-color: #082F43;
+    color: #1A83A8;
+    border-radius: 25px;
+    width: 300px;
+    margin: 50px 0px 50px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.scoreAr {
+    background-color: #082F43;
+    color: #1A83A8;
+    border-radius: 25px;
+    width: 300px;
+    margin: 50px 150px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.score h3,
+.scoreAr h3 {
+    margin-top: 20px;
+    color: #E6F7F9;
+}
+
+.startQuiz {
+    background-color: #E6F7F9;
+    color: #1A83A8;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+
+.startQuiz:hover {
+    color: white;
+    background-color: #1A83A8;
+}
+
+
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: conic-gradient(var(--color) calc(var(--score) * 1%),
+            #E6F7F9 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 50px;
+
+}
+
+.inner {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--color);
+}
+
+.strengtWeakhHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.headIcons {
+    font-size: 30px;
+}
+
+.startAssessQuiz {
+    background-color: #CDF6F9;
+    color: #1A83A8;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    animation-delay: 1.2s;
+
+}
+
+.iconForStartAssessment {
+    font-size: 60px;
+    color: #0a546f;
+    padding-bottom: 10px;
+}
+
+.startAssessment {
+    background-color: #0a546f;
+    color: #CDF6F9;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+}
+
+.startAssessment:hover {
+    background-color: #082F43;
+}
+
+.assessmentActions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.changeCvBtn {
+    background-color: white;
+    color: #0a546f;
+    border: 1px solid #0a546f;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.changeCvBtn:hover {
+    background-color: #E6F7F9;
+}
+
+
+.headReport {
+    background-color: #082F43;
+    border-radius: 25px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    animation-delay: 0.2s;
+}
+
+.headReportText {
+    color: white;
+
+}
+
+.ScoreText {
+    color: var(--score-color);
+    text-shadow:
+        2px 2px 20px var(--score-color);
+}
+
+.reportTitle {
+    margin-bottom: 30px;
+}
+
+.feildStyle {
+    background-color: #bedde8;
+    color: #1A83A8;
+    border-radius: 25px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+
+}
+
+@media (max-width: 767px) {
+
+    .reportEn,
+    .reportAr {
+        padding: 20px;
+    }
+
+    .strengths,
+    .weaknesses {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .score,
+    .scoreAr {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .circle {
+        margin: 20px auto;
+    }
+
+    .headReport {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .reportEn {
+        padding: 20px 40px;
+    }
+
+    .reportAr {
+        padding: 20px 40px;
+    }
+
+    .reportEn .col-md-6,
+    .reportAr .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .strengths,
+    .weaknesses,
+    .score,
+    .scoreAr {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .circle {
+        margin: 20px auto;
+    }
+
+
+}
+
+
+@media (max-width: 991px) {
+    .headReport {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .feildStyle {
+        margin: 10px 0;
+    }
+
+    .reportTitle {
+        margin: 15px 0;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .strengths,
+    .weaknesses {
+        width: 100%;
+    }
+
+    .score {
+        margin-left: 50px;
+    }
+
+    .scoreAr {
+        margin-right: 50px;
+    }
+
+    .reportEn {
+        padding: 20px 40px 20px 50px;
+    }
+
+    .reportAr {
+        padding: 20px 50px 20px 40px;
+    }
+
+
+}
+
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .reportEn {
+        margin-left: 240px;
+    }
+
+    .reportAr {
+        margin-right: 240px;
+    }
+
+    .ScoreText,
+    .decCV {
+        margin-left: 20px;
+    }
+
+    .ScoreTextEn,
+    .decCVEn {
+        margin-right: 20px;
+    }
+
+}

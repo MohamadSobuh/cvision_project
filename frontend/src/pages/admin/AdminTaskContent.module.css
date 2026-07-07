@@ -1,0 +1,272 @@
+
+
+.taskEn {
+    background-color: #E6F7F9;
+  padding: 20px 40px 20px 300px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.taskAr {
+    background-color: #E6F7F9;
+  padding: 20px 300px 20px 40px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.bgGrid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(59, 158, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 158, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+}
+.banner {
+  background-color: #082F43;
+  border-radius: 20px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.bannerIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookIcon {
+  color: #E6F7F9;
+  stroke-width: 1.5;
+}
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.lessonSub {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7D9AA9; 
+  margin-bottom: 6px;
+}
+
+.lessonTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.mainCard {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #15859E;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.cardDescription {
+  font-size: 16px;
+  font-weight: 400;
+  color: #15859E; 
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.mediaRow {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.mediaBoxImage {
+  flex: 1;
+  background-color: #F4F6FF;
+  border: 2px dashed #BAC5F0;
+  border-radius: 16px;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mediaBoxImage:hover {
+  background-color: #EDF1FF;
+}
+
+.mediaIconImg {
+  color: #92A6E3;
+}
+
+.mediaTextImg {
+  color: #92A6E3;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mediaBoxImage img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.mediaBoxVideo {
+  flex: 1;
+  background-color: #FDF4FF;
+  border: 2px dashed #EAC1FA;
+  border-radius: 16px;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mediaBoxVideo iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.mediaBoxVideo:hover {
+  background-color: #F9E8FF;
+}
+
+.mediaIconVid {
+  color: #D9AEFB;
+}
+
+.mediaTextVid {
+  color: #D9AEFB;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.footerNav {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.navButtonLeft {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 0;
+  color: #A9B0B5;
+  transition: opacity 0.3s ease;
+}
+
+.navButtonLeft:hover {
+  opacity: 0.7;
+}
+
+.arrowIconLeft {
+  color: inherit;
+}
+
+.navTextLeft {
+  font-size: 18px;
+  font-weight: 500;
+  color: inherit;
+}
+
+.navButtonRight {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 0;
+  color: #082F43;
+  transition: opacity 0.3s ease;
+}
+
+.navButtonRight:hover {
+  opacity: 0.7;
+}
+
+.arrowIconRight {
+  color: inherit;
+  strokeWidth: 2;
+}
+
+.navTextRight {
+  font-size: 18px;
+  font-weight: 700;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .mediaRow {
+    flex-direction: column;
+  }
+  
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  
+  .footerNav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .taskEn,
+  .taskAr {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .taskEn,
+  .taskAr {
+    padding: 15px;
+  }
+
+   .footerNav {
+    flex-direction: row;  
+    flex-wrap: nowrap;    
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .navButtonLeft,
+  .navButtonRight {
+    white-space: nowrap;   
+  }
+}
