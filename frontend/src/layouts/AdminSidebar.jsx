@@ -1,5 +1,5 @@
 import style from "./SidebarAdminUser.module.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { FaThLarge, FaUsers, FaBookOpen, FaListUl, FaQuestionCircle, FaCog, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 import lightlogo from "../images/lightlogo.png";
 import { useTranslation } from "react-i18next";
@@ -9,6 +9,7 @@ export default function AdminSidebar({ language }) {
 
     const [userImg, setUserImg] = useState({ image: "" });
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setUserImg({

@@ -15,7 +15,15 @@ const TopicContainer = ({ children }) => {
         }
     }, [id, topics]);
 
-
+    const handleSave = (updatedTopic) => {
+        setTopics((prevTopics) =>
+            prevTopics.map((topic) =>
+                topic.id === updatedTopic.id ? updatedTopic : topic
+            )
+        );
+        setFormData(updatedTopic);
+        navigate('/admin/topics');
+    };
 
     if (!formData) return null;
 
