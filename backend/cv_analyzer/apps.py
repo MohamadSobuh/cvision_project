@@ -10,6 +10,9 @@ class CvAnalyzerConfig(AppConfig):
     name = "cv_analyzer"
 
     def ready(self):
+        if not getattr(settings, "CV_ANALYZER_LOAD_BERT_NER", False):
+            return
+
         # Avoid loading the model in the development autoreloader parent.
         is_runserver = "runserver" in sys.argv
         is_reloader_parent = (

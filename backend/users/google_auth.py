@@ -11,6 +11,8 @@ from cryptography.hazmat.primitives.asymmetric import padding
 
 GOOGLE_CERTS_URL = "https://www.googleapis.com/oauth2/v1/certs"
 GOOGLE_ISSUERS = {"accounts.google.com", "https://accounts.google.com"}
+_google_certs = None
+_google_certs_expires_at = 0
 
 
 class InvalidGoogleToken(ValueError):
@@ -20,6 +22,33 @@ class InvalidGoogleToken(ValueError):
 def _decode_segment(segment):
     padding_length = (-len(segment)) % 4
     return base64.urlsafe_b64decode(segment + ("=" * padding_length))
+
+
+def _get_google_certs():
+    global _google_certs
+    global _google_certs_expires_at
+
+    now = time.time()
+    if _google_certs and now < _google_certs_expires_at:
+        return _google_certs
+
+    response = requests.get(GOOGLE_CERTS_URL, timeout=5)
+    response.raise_for_status()
+
+    max_age = 3600
+    cache_control = response.headers.get("cache-control", "")
+    for part in cache_control.split(","):
+        part = part.strip()
+        if part.startswith("max-age="):
+            try:
+                max_age = int(part.split("=", 1)[1])
+            except ValueError:
+                pass
+            break
+
+    _google_certs = response.json()
+    _google_certs_expires_at = now + max_age
+    return _google_certs
 
 
 def verify_google_id_token(token, client_id):
@@ -35,9 +64,7 @@ def verify_google_id_token(token, client_id):
         raise InvalidGoogleToken("Unsupported Google credential.")
 
     try:
-        response = requests.get(GOOGLE_CERTS_URL, timeout=5)
-        response.raise_for_status()
-        certificate_pem = response.json()[header["kid"]].encode("ascii")
+        certificate_pem = _get_google_certs()[header["kid"]].encode("ascii")
         public_key = x509.load_pem_x509_certificate(certificate_pem).public_key()
         public_key.verify(
             signature,

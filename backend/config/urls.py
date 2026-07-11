@@ -18,8 +18,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.http import JsonResponse
+
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})
 
 urlpatterns = [
+    path('healthz/', health_check, name='health-check'),
     path('admin/', admin.site.urls),
     path('api/dashboard/', include('dashboard.urls')), 
      path('api/users/', include('users.urls')), 

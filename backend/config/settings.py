@@ -70,7 +70,7 @@ REPORT_RECIPIENT_EMAIL = os.getenv("REPORT_RECIPIENT_EMAIL", EMAIL_HOST_USER)
 GOOGLE_OAUTH_CLIENT_ID = os.getenv("GOOGLE_OAUTH_CLIENT_ID", "")
 
 CV_ANALYZER_LOAD_BERT_NER = os.getenv(
-    "CV_ANALYZER_LOAD_BERT_NER", "true"
+    "CV_ANALYZER_LOAD_BERT_NER", "false"
 ).lower() in {"1", "true", "yes", "on"}
 CV_ANALYZER_BERT_NER_MODEL = os.getenv(
     "CV_ANALYZER_BERT_NER_MODEL", "dslim/bert-base-NER"
