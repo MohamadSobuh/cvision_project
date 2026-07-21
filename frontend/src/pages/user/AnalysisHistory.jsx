@@ -39,20 +39,23 @@ export default function AnalysisHistory({ language }) {
         };
 
 
-    const fetchHistory = async() => {
+    const fetchHistory = async(signal) => {
         if (!ensureAuth()) return;
         try{
-                const response = await api.get("/userr/analysis-history/");
+                const response = await api.get("/userr/analysis-history/", { signal });
                 setHistory(response.data);
                 console.log(response.data);
             }
         catch (error) {
+                if (error.code === "ERR_CANCELED") return;
                 console.log(error);
             }
         }
 
     useEffect(() => {
-        fetchHistory();
+        const controller = "AbortController" in window ? new AbortController() : null;
+        fetchHistory(controller?.signal);
+        return () => controller?.abort();
         
     }, []);
 
@@ -123,7 +126,7 @@ export default function AnalysisHistory({ language }) {
 
             {history.length === 0 ? (
                 <EmptyPage
-                    icon={<img src={emptyHistory} width="200" height="150" />}
+                    icon={<img src={emptyHistory} width="200" height="150" alt="" loading="lazy" decoding="async" />}
                     title={t('emptyHistoryTitle')}
                     message={t('emptyHistoryMessage')}
                     btnText={t('upload')}

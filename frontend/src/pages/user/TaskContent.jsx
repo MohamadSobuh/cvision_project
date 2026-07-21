@@ -37,15 +37,21 @@ export default function TaskContent({ language }) {
 
     useEffect(() => {
         if (!ensureAuth()) return;
+        const controller = "AbortController" in window ? new AbortController() : null;
         const fetchTaskData = async () => {
             try {
-                const response = await api.get(`/userr/task-content/${planTaskId}/`);
+                const response = await api.get(`/userr/task-content/${planTaskId}/`, {
+                    signal: controller?.signal,
+                });
                 setTaskData(response.data);
             } catch (error) {
+                if (error.code === "ERR_CANCELED") return;
                 console.error('Error fetching task data:', error);
             }
         };
         fetchTaskData();
+
+        return () => controller?.abort();
     }, [activeTask, planTaskId]);
 
     if (!taskData) {
@@ -81,7 +87,13 @@ export default function TaskContent({ language }) {
                                 onClick={() => setIsImageOpen(true)}
                                 aria-label="Open task image"
                             >
-                                <img src={taskData.image_url} alt="Task" className={styles.img} />
+                                <img
+                                    src={taskData.image_url}
+                                    alt="Task"
+                                    className={styles.img}
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                             </button>
                         )}
                     </div>
@@ -94,6 +106,7 @@ export default function TaskContent({ language }) {
                                 allowFullScreen
                                 title="Task Video"
                                 referrerPolicy="strict-origin-when-cross-origin"
+                                loading="lazy"
                                 className={styles.videoFrame}
                             ></iframe>
                         )}
@@ -134,7 +147,7 @@ export default function TaskContent({ language }) {
                         >
                             ×
                         </button>
-                        <img src={taskData.image_url} alt="Task enlarged" />
+                        <img src={taskData.image_url} alt="Task enlarged" decoding="async" />
                     </div>
                 </div>
             )}

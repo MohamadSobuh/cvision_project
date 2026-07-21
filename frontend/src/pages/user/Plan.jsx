@@ -20,15 +20,16 @@ export default function Plan({ language }) {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    const loadPlan = useCallback(async () => {
+    const loadPlan = useCallback(async (signal) => {
         setLoading(true);
         setLoadError(false);
 
         try {
-            const response = await api.get("/userr/learning-plan/");
+            const response = await api.get("/userr/learning-plan/", { signal });
             setPlan(response.data);
             setActiveTopicId(response.data.modules?.[0]?.id ?? null);
         } catch (error) {
+            if (error.code === "ERR_CANCELED") return;
             setPlan(null);
             setActiveTopicId(null);
 
@@ -42,7 +43,9 @@ export default function Plan({ language }) {
     }, []);
 
     useEffect(() => {
-        loadPlan();
+        const controller = "AbortController" in window ? new AbortController() : null;
+        loadPlan(controller?.signal);
+        return () => controller?.abort();
     }, [loadPlan]);
 
     const planData = useMemo(() => plan?.modules || [], [plan?.modules]);
@@ -83,7 +86,7 @@ export default function Plan({ language }) {
                 />
             ) : !plan ? (
                 <EmptyPage
-                    icon={<img src={planEmpty} width="200" alt="" />}
+                    icon={<img src={planEmpty} width="200" alt="" loading="lazy" decoding="async" />}
                     title={t('assessmentRequiredTitle')}
                     message={t('assessmentRequiredMessage')}
                     btnText={t('goToHistory')}
@@ -122,7 +125,7 @@ export default function Plan({ language }) {
                     </div>
                     {planData.length === 0 ? (
                         <EmptyPage
-                            icon={<img src={planEmpty} width="200" alt="" />}
+                            icon={<img src={planEmpty} width="200" alt="" loading="lazy" decoding="async" />}
                             title="No remaining learning gaps"
                             message="Your placement result did not assign any available learning modules."
                             btnText={t('changeCv', 'Change CV')}

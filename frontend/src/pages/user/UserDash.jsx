@@ -83,18 +83,21 @@ export default function UserDash({ language }) {
         }
         return true;
     };
-    const fetchUserData = async () => {
+    const fetchUserData = async (signal) => {
         if (!ensureAuth()) return;
         try {
-            const response = await api.get("/userr/dashboard/");
+            const response = await api.get("/userr/dashboard/", { signal });
             console.log(response.data);
             setUserDash(response.data);
         } catch (error) {
+            if (error.code === "ERR_CANCELED") return;
             console.log(error);
         }
     };
     useEffect(() => {
-        fetchUserData();
+        const controller = "AbortController" in window ? new AbortController() : null;
+        fetchUserData(controller?.signal);
+        return () => controller?.abort();
     }, []);
 
 
@@ -114,6 +117,8 @@ export default function UserDash({ language }) {
                 <img
                     src={isArabic ? dashR : dashL}
                     className={style.headerImage}
+                    alt=""
+                    decoding="async"
                 />
             </div>
             <div className='row'>

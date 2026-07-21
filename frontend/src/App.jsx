@@ -26,6 +26,7 @@ const SessionTimeout = lazy(() => import('./components/SessionTimeout'));
 
 import { UserFlowProvider } from './context/UserFlowContext';
 import { AdminFlowProvider } from './context/AdminFlowContext';
+import BrowserPerformance from "./components/BrowserPerformance";
 import LoadingScreen from "./components/ui/LoadingScreen";
 import QuizNavigationGuard from "./components/QuizNavigationGuard";
 
@@ -50,9 +51,22 @@ const InitalAssQuiz = lazy(() => import('./pages/user/InitalAssQuiz'));
 const TaskAnswerResult = lazy(() => import("./pages/user/TaskAnswerResult"));
 
 export default function App() {
-  const [language, setLanguage] = useState(() => localStorage.getItem("language") || "en");
+  const [language, setLanguage] = useState(() => {
+    try {
+      return localStorage.getItem("language") || "en";
+    } catch {
+      return "en";
+    }
+  });
   const { t, i18n } = useTranslation();
-  const [user] = useState(JSON.parse(localStorage.getItem("user")));
+  const [user] = useState(() => {
+    try {
+      const savedUser = localStorage.getItem("user");
+      return savedUser ? JSON.parse(savedUser) : null;
+    } catch {
+      return null;
+    }
+  });
   
 
 
@@ -65,6 +79,7 @@ export default function App() {
       <UserFlowProvider>
 
         <div>
+          <BrowserPerformance />
           {/* <AdminSidebar language={language} /> */}
           {/* <Signin/> */}
           {/* <Sidebar language={language} />*/}

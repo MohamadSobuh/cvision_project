@@ -19,14 +19,15 @@ export const AdminFlowProvider = ({ children }) => {
   const [activeTask, setActiveTask] = useState(null);
   const [editTask, setEditTask] = useState(null);
 
-  const fetchTopics = useCallback(async () => {
+  const fetchTopics = useCallback(async (signal) => {
     setLoadingTopics(true);
     try {
      
-      const response = await api.get("/dashboard/topics/");
+      const response = await api.get("/dashboard/topics/", { signal });
       setTopics(response.data);
       return true;
     } catch (err) {
+      if (err.code === "ERR_CANCELED") return false;
       console.error("Error fetching topics:", err);
       return false;
     } finally {

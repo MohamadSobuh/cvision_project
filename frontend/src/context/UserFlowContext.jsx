@@ -10,7 +10,13 @@ const UserFlowContext = createContext({
 });
 
 export const UserFlowProvider = ({ children }) => {
-  const [userId, setUserId] = useState(() => localStorage.getItem("userId") || null);
+  const [userId, setUserId] = useState(() => {
+    try {
+      return localStorage.getItem("userId") || null;
+    } catch {
+      return null;
+    }
+  });
   const [history, setHistory] = useState([]);
   const [targetField, setTargetField] = useState('');
   const [analysisResult, setAnalysisResult] = useState({
@@ -24,28 +30,50 @@ export const UserFlowProvider = ({ children }) => {
   const [cvId, setCvId] = useState(null);
   const [activeTask, setActiveTask] = useState(null);
   const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem('user');
-    return savedUser ? JSON.parse(savedUser) : null;
+    try {
+      const savedUser = localStorage.getItem('user');
+      return savedUser ? JSON.parse(savedUser) : null;
+    } catch {
+      return null;
+    }
   });
 
   useEffect(() => {
+    const controller = "AbortController" in window ? new AbortController() : null;
+
     const fetchUser = async () => {
-      const token = localStorage.getItem("accessToken");
-      const role = localStorage.getItem("userRole");
+      let token = null;
+      let role = null;
+      try {
+        token = localStorage.getItem("accessToken");
+        role = localStorage.getItem("userRole");
+      } catch {
+        return;
+      }
+
       if (!token || token === "undefined" || role !== "user") return;
 
       try {
-        const response = await api.get('/userr/profile/');
+        const response = await api.get('/userr/profile/', {
+          signal: controller?.signal,
+        });
         const data = response.data;
         if (!data.image) data.image = profileImg;
         setUser(data);
-        localStorage.setItem('user', JSON.stringify(data));
+        try {
+          localStorage.setItem('user', JSON.stringify(data));
+        } catch {
+          // Keep React state even when persistent storage is unavailable.
+        }
       } catch (err) {
+        if (err.code === "ERR_CANCELED") return;
         console.error('Failed to fetch user profile:', err);
       }
     };
 
     fetchUser();
+
+    return () => controller?.abort();
   }, []);
 
   return (

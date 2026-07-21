@@ -40,16 +40,20 @@ export default function SessionTimeout() {
     }, [logout]);
 
     useEffect(() => {
+        const controller = "AbortController" in window ? new AbortController() : null;
         const token = localStorage.getItem("accessToken");
 
         if (token && token !== "undefined" && token !== lastTokenRef.current) {
             lastTokenRef.current = token;
 
-            api.get("/dashboard/settings/").then(response => {
+            api.get("/dashboard/settings/", {
+                signal: controller?.signal,
+            }).then(response => {
                 const timeoutMinutes = response.data?.sessionTimeout || 30;
                 timeoutMsRef.current = timeoutMinutes * 60 * 1000;
                 resetTimeout();
             }).catch(error => {
+                if (error.code === "ERR_CANCELED") return;
                 console.error("Error setting up session timeout:", error);
                 timeoutMsRef.current = 30 * 60 * 1000;
                 resetTimeout();
@@ -59,6 +63,8 @@ export default function SessionTimeout() {
             lastTokenRef.current = null;
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
         }
+
+        return () => controller?.abort();
     }, [location.pathname, resetTimeout]);
 
     useEffect(() => {
