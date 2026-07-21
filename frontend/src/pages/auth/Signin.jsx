@@ -181,8 +181,13 @@ export default function Signin() {
                             )}
                         </div>
                     ))}
-                    <button type="submit" className={style.btn} disabled={isSubmitting}>
-                        <b>{t("login")}</b>
+                    <button
+                        type="submit"
+                        className={style.btn}
+                        disabled={isSubmitting}
+                        aria-busy={isSubmitting}
+                    >
+                        <b>{isSubmitting ? t("loggingIn") : t("login")}</b>
                     </button>
                 </form>
 
