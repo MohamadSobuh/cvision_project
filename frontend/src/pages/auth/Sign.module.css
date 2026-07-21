@@ -70,8 +70,42 @@
     display: block;
 }
 
+.btn:disabled {
+    cursor: wait;
+    opacity: 0.85;
+}
+
 .btn:hover {
     background: linear-gradient(to right, #082F43, #1A83A8, #a0d8dd);
+}
+
+.btnSpinner {
+    animation: spin 0.8s linear infinite;
+    border: 3px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    display: inline-block;
+    height: 22px;
+    vertical-align: middle;
+    width: 22px;
+}
+
+.srOnly {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .divider {

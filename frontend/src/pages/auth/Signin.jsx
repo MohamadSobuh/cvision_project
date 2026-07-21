@@ -187,7 +187,14 @@ export default function Signin() {
                         disabled={isSubmitting}
                         aria-busy={isSubmitting}
                     >
-                        <b>{isSubmitting ? t("loggingIn") : t("login")}</b>
+                        {isSubmitting ? (
+                            <>
+                                <span className={style.btnSpinner} aria-hidden="true"></span>
+                                <span className={style.srOnly}>{t("loggingIn")}</span>
+                            </>
+                        ) : (
+                            <b>{t("login")}</b>
+                        )}
                     </button>
                 </form>
 
