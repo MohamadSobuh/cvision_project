@@ -13,11 +13,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         model = User
         fields = ['email', 'first_name', 'last_name', 'password', 'image', 'bio']
     
-    def validate_email(self, value):
-        if User.objects.filter(email=value).exists():
-            raise serializers.ValidationError("هذا الإيميل مسجل بالفعل")
-        return value
-    
     def create(self, validated_data):
         image = validated_data.pop('image', None)
         bio = validated_data.pop('bio', '')
